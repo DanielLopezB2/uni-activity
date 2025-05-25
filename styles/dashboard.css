@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 1rem 5.3rem;
+}
+
+/* HEADER */
+
+header {
+    background-color: white;
+    padding: 1.7rem 5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav a.active {
+    color: black;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: black;
+    font-weight: 600;
+}
+
+/* SUBHEADER */
+
+.main-subheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.main-subheader h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.main-subheader button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-subheader button:hover {
+    background-color: #333;
+}
+
+/* CARDS */
+
+.cards-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background-color: #fff;
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 250px;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card p:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.card p:last-child {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* RECENT ENTRIES */
+.recent-entries {
+    margin-top: 5rem;
+}
+
+.recent-entries h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.recent-entry-card {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    color: #555;
+}
+
+.recent-entry-card p:first-child {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.recent-entry-card p:last-child {
+    max-width: 400px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* DIALOG */
+
+dialog#new-entry-dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 480px;
+    background-color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+dialog#new-entry-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+dialog#new-entry-dialog h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+dialog#new-entry-dialog form {
+    display: flex;
+    flex-direction: column;
+}
+
+dialog#new-entry-dialog label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: large;
+    color: black;
+}
+
+dialog#new-entry-dialog input,
+dialog#new-entry-dialog textarea {
+    margin-top: 5px;
+    padding: 0.8rem 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+dialog#new-entry-dialog input:focus,
+dialog#new-entry-dialog textarea:focus {
+    border-color: black;
+    outline: none;
+    background-color: #fff;
+}
+
+dialog#new-entry-dialog textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+dialog#new-entry-dialog .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+dialog#new-entry-dialog .dialog-buttons button {
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+dialog#new-entry-dialog button[type="submit"] {
+    background-color: black;
+    color: white;
+}
+
+dialog#new-entry-dialog button[type="submit"]:hover {
+    background-color: #333;
+}
+
+dialog#new-entry-dialog button#cancel-dialog {
+    background-color: transparent;
+    color: #888;
+    border: #dadada solid 1px;
+}
+
+dialog#new-entry-dialog button#cancel-dialog:hover {
+    color: black;
+    background-color: #f0f0f0;
+}

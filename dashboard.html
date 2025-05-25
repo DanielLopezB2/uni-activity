@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>📖 Diario Personal</h2>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a class="active" href="#">Dashboard</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                    <li><a href="index.html">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+
+    <main>
+        <!-- SUBHEADER -->
+        <div class="main-subheader">
+            <h4>¡Bienvenid@ de nuevo!</h4>
+            <button id="open-dialog">Nuevo diario</button>
+        </div>
+
+        <!-- CARDS -->
+        <div class="cards-container">
+            <div class="card">
+                <p>0</p>
+                <p>Total de escrituras</p>
+            </div>
+
+            <div class="card">
+                <p>0</p>
+                <p>Racha de escrituras</p>
+            </div>
+
+            <div class="card">
+                <p>0</p>
+                <p>Palabras escritas</p>
+            </div>
+        </div>
+
+
+        <!-- RECENT ENTRIES -->
+        <div class="recent-entries">
+            <h6>Escrituras recientes</h6>
+            <div class="recent-entry-card">
+                <p>✨</p>
+                <p>Aún no se ha escrito nada. Empieza escribiendo tu primer diario.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <dialog id="new-entry-dialog">
+        <h3>Agregar nuevo diario</h3>
+      
+        <form method="dialog">
+          <label for="entry-title">Título</label>
+          <input type="text" name="entry-title" id="entry-title" required />
+      
+          <label for="entry-content">Contenido</label>
+          <textarea name="entry-content" id="entry-content" required></textarea>
+      
+          <div class="dialog-buttons">
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancel-dialog">Cancelar</button>
+          </div>
+        </form>
+      </dialog>
+
+    <footer>
+        <div>
+            <p>Daniel Lopez Bedoya</p>
+            <span>2025 - Corporación Universitaria Iberoamericana</span>
+        </div>
+    </footer>
+    <script defer src="script.js"></script>
+</body>
+</html>
