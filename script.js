@@ -1,16 +1,18 @@
 // ========== LOGIN ==========
 document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
     const loginForm = document.querySelector('form');
-    if (loginForm && window.location.pathname.includes('index.html')) {
-        loginForm.addEventListener('submit', (e) => {
+
+    if (path.endsWith('/') || path.endsWith('/index.html')) {
+        loginForm?.addEventListener('submit', (e) => {
             e.preventDefault();
+
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value.trim();
 
             if (username && password) {
-                const now = new Date().toISOString();
                 localStorage.setItem('username', username);
-                localStorage.setItem('memberSince', now);
+                localStorage.setItem('memberSince', new Date().toISOString());
                 window.location.href = 'dashboard.html';
             } else {
                 alert('Por favor, complete todos los campos.');
